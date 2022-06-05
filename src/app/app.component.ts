@@ -1,3 +1,4 @@
+import { createMayBeForwardRefExpression } from '@angular/compiler';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -11,7 +12,9 @@ import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule} f
 
 export class AppComponent {
   title = 'Portfolio';
-  public ContactForm: FormGroup = new FormGroup({
+
+  //Currently Not active, no backend support for email service at this time
+  public ContactForm: FormGroup = new FormGroup({ 
     Name: new FormControl("name", Validators.required),
     Email: new FormControl("Email", Validators.required),
     Subject: new FormControl("Subject"),
@@ -20,6 +23,9 @@ export class AppComponent {
  
   public imageURLs: string[] = ['../assets/EliteApparel.png', '../assets/preference.png',
   '../assets/calendar.png', '../assets/director.png', '../assets/login.png',  ]
+
+  public imageCardPoped: boolean = false;
+  public imageCardPopedURL: string = "";
 
   @HostListener('window:scroll', ['$event']) scrollHandler(){
     this.fadeOutOnScroll();
@@ -62,6 +68,11 @@ export class AppComponent {
       return true;
     }
     return false;
+  }
+
+  PopThisImage(URL: string){
+    this.imageCardPoped = true;
+    this.imageCardPopedURL = URL;
   }
 
   Submit(){

@@ -8,6 +8,12 @@
     </div>
   </header>
   <body id="ContentBody" class="container">
+    <div id="ImagePopOut" *ngIf="imageCardPoped" class="fixed-top" (click)="(imageCardPoped = false)">
+      <button type="button" class="btn btn-outline-danger" (click)="(imageCardPoped = false)">X</button>
+      <div class="fh-100 d-flex align-items-center justify-content-center">
+        <img id="PoppedImage" src="{{imageCardPopedURL}}" alt=":( Sick D:">
+      </div>
+    </div>
     <section id="AboutMe" class="row section" >
       <div class="col-sm-12 col-md-6">
         <img id="AboutMepng" src="../assets/aboutme.png" alt="About Me">
@@ -27,21 +33,26 @@
       <div class="col-sm-12 col-md-6">
         <div class="top-padding">
           <h4>Development Practices, Source Control, and Infostructure:</h4>
-          <p>Agile, SCRUM, Jira, Git, TFS, Azure Fundamentals, Docker. </p>
+          <p>Agile, SCRUM, Jira, Git, TFS, Google Cloud Services, Docker. </p>
           <h4>Frameworks and Languages:</h4>
           <p>.NET 5 & 6, Angular, Node.js, C#, C/C++, Javascript/ts</p>
+          <h4>Databases:</h4>
+          <p>Microsoft SQL server, Google Bigquery, Google Firestore, SQLite</p>
         </div>
+      </div>
+      <div class="col-md-12">
+        <img src="../assets/skill_logos.png" alt="logogs">
       </div>
     </section>
     <section id="Work" class="row section">
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-6 offset-md-3">
         <img id="Workpng" src="../assets/work.png" alt="My Work">
       </div>
       <div class="col-sm-12 col-md-6">
       </div>
       <div class="row">
         <div *ngFor="let imageURL of imageURLs" class="col-md-6">
-          <img src="{{imageURL}}" alt=":/" class="rounded image-responsive" >
+          <img src="{{imageURL}}" alt=":/" class="rounded image-responsive" (click)="PopThisImage(imageURL)">
         </div>
     </div>
     </section>
@@ -53,21 +64,6 @@
           <a class="fa fa-linkedin" href="https://www.linkedin.com/in/ellybelden/" target="_blank" rel="noopener noreferrer"></a>
           <a class="fa fa-github" href="https://github.com/CelesteBelden" target="_blank" rel="noopener noreferrer"></a>
           <a class="fa fa-facebook" href="https://www.facebook.com/Celeste.Belden.19/" target="_blank" rel="noopener noreferrer"></a>
-      </div>
-      <div class="col-md-12 container d-none">
-        <form #contactForm [formGroup]="ContactForm" (ngSubmit)="Submit()">
-          <div class="row">
-              <input id="Name" class="FormControl col-md-6" type="text" formControlName="Name">
-              <input id="Email" class="FormControl col-md-6" type="text" formControlName="Email">
-          </div>
-          <div class="row">
-              <input id="Subject" class="FormControl col-md-12" type="text" formControlName="Subject">
-          </div>
-          <div class="row">
-            <textarea id="message" class="FormControl" placeholder="Message..." row="5"></textarea>
-          </div>
-          <button type="submit" class="row btn btn-outline-info">Send</button>
-        </form>
       </div>
     </section>
   </body>
