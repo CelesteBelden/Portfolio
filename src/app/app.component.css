@@ -77,10 +77,10 @@ a {
 }
 
 #PoppedImage {
-    max-width: 60%;
-    height: auto;
-    max-height: 800px;
+    max-width: 70%;
+    aspect-ratio: 16/9;    
     border: solid 1px lightgray;
     border-radius: 20px;
+    
 }
 

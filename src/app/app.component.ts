@@ -1,6 +1,4 @@
-import { createMayBeForwardRefExpression } from '@angular/compiler';
-import { Component, HostListener, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +10,6 @@ import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule} f
 
 export class AppComponent {
   title = 'Portfolio';
-
-  //Currently Not active, no backend support for email service at this time
-  public ContactForm: FormGroup = new FormGroup({ 
-    Name: new FormControl("name", Validators.required),
-    Email: new FormControl("Email", Validators.required),
-    Subject: new FormControl("Subject"),
-    Message: new FormControl("Message", Validators.required)
-  });
  
   public imageURLs: string[] = ['../assets/EliteApparel.png', '../assets/preference.png',
   '../assets/calendar.png', '../assets/director.png', '../assets/login.png',  ]
@@ -73,11 +63,6 @@ export class AppComponent {
   PopThisImage(URL: string){
     this.imageCardPoped = true;
     this.imageCardPopedURL = URL;
-  }
-
-  Submit(){
-    console.log(this.ContactForm);
-    this.ContactForm.reset();
   }
 }
 
