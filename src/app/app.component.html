@@ -6,6 +6,21 @@
     <div class="d-flex justify-content-center row">
       <img id="MySignature"  src="../assets/signature.png" alt="MySignature">
     </div>
+    <div class="row">
+      <div class="col-md-3">
+        <a href="#AboutMe"><img id="AboutMepng" class="img-fluid" src="../assets/aboutme.png" alt="About Me"></a>
+      </div>
+      <div class="col-md-3">
+        <a href="#Skills"><img id="Skillspng" class="img-fluid" src="../assets/skills.png" alt="My Skills"></a>
+      </div>
+      <div class="col-md-3">
+        <a href="#Work"><img id="Workpng" class="img-fluid" src="../assets/work.png" alt="My Work"></a>
+      </div>
+      <div class="col-md-3">
+        <a href="#Contact"><img id="Skillspng" class="img-fluid" src="../assets/contact.png" alt="Contact me"></a>
+      </div>
+    </div>
+
   </header>
   <body id="ContentBody" class="container">
     <div id="ImagePopOut" *ngIf="imageCardPoped" class="fixed-top" (click)="(imageCardPoped = false)">
@@ -54,7 +69,7 @@
         <div *ngFor="let imageURL of imageURLs" class="col-md-6">
           <img src="{{imageURL}}" alt=":/" class="rounded image-responsive" (click)="PopThisImage(imageURL)">
         </div>
-    </div>
+      </div>
     </section>
     <section id="Contact" class="row section">
       <div class="col-sm-12 col-md-6">
@@ -64,6 +79,11 @@
           <a class="fa fa-linkedin" href="https://www.linkedin.com/in/ellybelden/" target="_blank" rel="noopener noreferrer"></a>
           <a class="fa fa-github" href="https://github.com/CelesteBelden" target="_blank" rel="noopener noreferrer"></a>
           <a class="fa fa-facebook" href="https://www.facebook.com/Celeste.Belden.19/" target="_blank" rel="noopener noreferrer"></a>
+      </div>
+      <div class="row fixed-bottom">
+        <div class="offset-md-11 col-md-1">
+          <a href="#header"><img class="img-fluid" src="../assets/backtotop.png" alt="Back To Top"></a>
+        </div>
       </div>
     </section>
   </body>

@@ -52,6 +52,7 @@ export class AppComponent {
     }
   }
 
+  //Checks if an element 
   isInView(element: HTMLElement): boolean{
     let bounding = element.getBoundingClientRect();
     if (bounding.bottom >= 0) {
