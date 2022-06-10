@@ -48,6 +48,36 @@ a {
     font-size: 50px;
 }
 
+.low-height {
+    height: 25vh;
+}
+
+.carousel {
+    margin: 20px;
+}
+
+.project {
+    background-color: lightgray;
+    width: 1000px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10vh;
+    margin-left: 25%;
+}
+
+.project-card {
+    margin: 10px;
+}
+
+.project-card-image {
+    border-radius: 10px;
+    height: 375px;
+}
+
+.project-card-image:hover {
+    box-shadow: 5px 5px 10px gray;
+}
+
 #header {
     min-height: 100vh;
 }
@@ -70,17 +100,3 @@ a {
 #Socials {
     padding-top: 100px;
 }
-
-#ImagePopOut {
-    background: rgba(0,0,0,.5);
-    height: 100vh;
-}
-
-#PoppedImage {
-    max-width: 70%;
-    aspect-ratio: 16/9;    
-    border: solid 1px lightgray;
-    border-radius: 20px;
-    
-}
-

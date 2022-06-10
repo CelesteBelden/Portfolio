@@ -1,26 +1,38 @@
 import { Component, HostListener } from '@angular/core';
 
+interface Project{
+  name: string;
+  url: string;
+  imgUrls: string[];
+  length: number;
+  description: string;
+};
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 
-
-
 export class AppComponent {
   title = 'Portfolio';
  
-  public imageURLs: string[] = ['../assets/EliteApparel.png', '../assets/preference.png',
-  '../assets/calendar.png', '../assets/director.png', '../assets/login.png',  ]
+  public projects: Project[] = [
+    {name: "EliteApparel", url: "", imgUrls: ['../assets/EliteApparel.png', ], length: 1, description: "Light weight inventory managment application" },
+    {name: "CsetScheduling", url: "", imgUrls: ['../assets/calendar.png', '../assets/preference.png',
+     '../assets/director.png', '../assets/login.png',], length: 4, description: "Class scheduling system for Oregon Institute of Technology's own Computer Science Enginnering Technology Department"}
+  ];
 
-  public imageCardPoped: boolean = false;
-  public imageCardPopedURL: string = "";
+  public viewProject: boolean = false;
+  public poppedProject: Project = {name: "", url: "", imgUrls: [''], length: 0, description: ""};
 
+  //Listens for scrolling to trigger fadding effect
   @HostListener('window:scroll', ['$event']) scrollHandler(){
     this.fadeOutOnScroll();
+    this.viewProject = false;
   }
 
+  //Fades out elements leaving the viewport
   fadeOutOnScroll() {
     let element = document.getElementById('header');
     if(element != null &&!this.isInView(element)){
@@ -52,18 +64,13 @@ export class AppComponent {
     }
   }
 
-  //Checks if an element 
+  //Checks if an element is in the viewport
   isInView(element: HTMLElement): boolean{
     let bounding = element.getBoundingClientRect();
     if (bounding.bottom >= 0) {
       return true;
     }
     return false;
-  }
-
-  PopThisImage(URL: string){
-    this.imageCardPoped = true;
-    this.imageCardPopedURL = URL;
   }
 }
 
