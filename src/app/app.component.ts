@@ -1,3 +1,4 @@
+import { AnimationMetadataType, keyframes } from '@angular/animations';
 import { Component, HostListener } from '@angular/core';
 
 interface Project{

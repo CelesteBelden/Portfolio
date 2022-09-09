@@ -6,6 +6,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 import { AppComponent } from './app.component';
+import { WorkCardComponent } from './work-card/work-card.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBF4AJ93ID_jaTTgvuHjsVyG3E2l8Yp3eA",
@@ -22,7 +23,8 @@ const analytics = getAnalytics(app);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WorkCardComponent
   ],
   imports: [
     BrowserModule,
